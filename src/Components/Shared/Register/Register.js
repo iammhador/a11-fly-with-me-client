@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import user from "../../Assets/icons8-account-48.png";
 import phone from "../../Assets/icons8-ringer-volume-64.png";
 import eye from "../../Assets/icons8-eye-48.png";
 import atSign from "../../Assets/icons8-email-sign-64.png";
 import registerImg from "../../Assets/undraw_secure_login_pdn4.svg";
+import { AuthContext } from "../../Context/Context";
+
 const Register = () => {
+  const { googleLogin } = useContext(AuthContext);
+
+  //# Google Register :
+  const handleGoogleReg = () => {
+    googleLogin();
+  };
+
+  //# Register :
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <div>
       <section className="relative flex flex-wrap lg:h-screen lg:items-center">
@@ -18,7 +31,10 @@ const Register = () => {
             <p className="mt-4  text-primary">Please Register</p>
           </div>
 
-          <form action="" className="mx-auto mt-8 mb-0 max-w-md space-y-4">
+          <form
+            onSubmit={handleSubmit}
+            className="mx-auto mt-8 mb-0 max-w-md space-y-4"
+          >
             <div>
               <label for="username" className="sr-only">
                 Username
@@ -110,11 +126,13 @@ const Register = () => {
               </p>
 
               <button
+                onClick={handleGoogleReg}
                 type="submit"
                 className="ml-3 inline-block rounded-lg bg-orange-600 px-5 py-3 text-sm font-medium text-white"
               >
                 Google
               </button>
+
               <button
                 type="submit"
                 className="ml-3 inline-block rounded-lg bg-info px-5 py-3 text-sm font-medium text-white"

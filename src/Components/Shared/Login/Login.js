@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import eye from "../../Assets/icons8-eye-48.png";
 import atSign from "../../Assets/icons8-email-sign-64.png";
 import loginImg from "../../Assets/undraw_authentication_re_svpt.svg";
+import { AuthContext } from "../../Context/Context";
 const Login = () => {
+  const { googleLogin } = useContext(AuthContext);
+
+  //# Google Login :
+  const handleGoogleLogin = () => {
+    googleLogin();
+  };
+
+  //# Login :
+  const handleLogin = (e) => {
+    e.preventDefault();
+  };
   return (
     <div>
       <section className="relative flex flex-wrap lg:h-screen lg:items-center">
@@ -16,7 +28,10 @@ const Login = () => {
             <p className="mt-4  text-primary">Please Login</p>
           </div>
 
-          <form action="" className="mx-auto mt-8 mb-0 max-w-md space-y-4">
+          <form
+            onSubmit={handleLogin}
+            className="mx-auto mt-8 mb-0 max-w-md space-y-4"
+          >
             <div>
               <label for="email" className="sr-only">
                 Email
@@ -65,6 +80,7 @@ const Login = () => {
               </p>
 
               <button
+                onClick={handleGoogleLogin}
                 type="submit"
                 className="ml-3 inline-block rounded-lg bg-orange-600 px-5 py-3 text-sm font-medium text-white"
               >

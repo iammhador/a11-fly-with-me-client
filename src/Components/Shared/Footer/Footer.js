@@ -224,7 +224,9 @@ const Footer = () => {
             </div>
           </div>
 
-          <p className="mt-8 text-xs text-gray-500">&copy; 2022 Company Name</p>
+          <p className="mt-8 text-xs text-gray-500">
+            &copy; 2022 Fly With Me. Design And Build By <span>FN.</span>
+          </p>
         </div>
       </footer>
     </div>
