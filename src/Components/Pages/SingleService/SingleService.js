@@ -51,7 +51,7 @@ const SingleService = ({ singleSer }) => {
             </div>
 
             <div class="sm:inline-flex sm:shrink-0 sm:items-center">
-              <Link>
+              <Link to={`/services/${_id}`}>
                 <button className="flex items-center py-3 px-5 bg-secondary rounded text-neutral hover:bg-info">
                   Details
                   <FaArrowRight className="ml-2" />
