@@ -8,7 +8,7 @@ import userAvater from "../../Assets/icons8-person-100.png";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logout } = useContext(AuthContext);
-  console.log(user);
+
   //# Logout :
   const handleLogout = () => {
     logout()
@@ -67,7 +67,7 @@ const Navbar = () => {
                 </li>
                 <li class="block relative">
                   <img
-                    alt="profile"
+                    referrerPolicy="no-referrer"
                     src={user.photoURL ? user.photoURL : userAvater}
                     class="mx-auto object-cover rounded-full h-8 w-8 bg-primary"
                   />
