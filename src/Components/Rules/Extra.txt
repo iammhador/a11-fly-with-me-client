@@ -5,15 +5,15 @@
 
 3. Try to use a better-looking confirmation dialogue other than the browser's default confirm.
 
-4. On the add a service page, try to implement direct image upload from your computer. This image can be hosted on a third party image hosting like imgbb or directly to mongodb.
+//* 4. On the add a service page, try to implement direct image upload from your computer. This image can be hosted on a third party image hosting like imgbb or directly to mongodb.
 
 5.Add some animation while applicable.
 
-6. Please Use icons whenever applicable and use fonts (google fonts)
+//* 6. Please Use icons whenever applicable and use fonts (google fonts)
 
-7. Make the footer a little more realistic with the copyright symbol and year.
+//* 7. Make the footer a little more realistic with the copyright symbol and year.
 
-8. Optimize your images.
+//* 8. Optimize your images.
 
 9. Add something extra of your own. This will help you in the future.
 

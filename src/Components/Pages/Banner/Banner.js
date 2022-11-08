@@ -19,11 +19,11 @@ const Banner = () => {
               contact with me.
             </p>
             <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-              <Link to="/">
+              <a href="#contact">
                 <button className="flex items-center px-8 py-3 text-lg font-semibold rounded bg-secondary text-neutral hover:bg-info mx-auto">
                   Contact <FaArrowRight className="ml-2" />
                 </button>
-              </Link>
+              </a>
             </div>
           </div>
           <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
