@@ -144,14 +144,14 @@ const Register = () => {
               <button
                 onClick={handleGoogleReg}
                 type="submit"
-                className="ml-3 inline-block rounded-lg bg-orange-600 px-5 py-3 text-sm font-medium text-white"
+                className="ml-3 inline-block rounded-lg bg-orange-400 px-5 py-3 text-sm font-medium text-white hover:bg-orange-600"
               >
                 Google
               </button>
 
               <button
                 type="submit"
-                className="ml-3 inline-block rounded-lg bg-info px-5 py-3 text-sm font-medium text-white"
+                className="ml-3 inline-block rounded-lg bg-info px-5 py-3 text-sm font-medium text-white hover:bg-secondary"
               >
                 Register
               </button>

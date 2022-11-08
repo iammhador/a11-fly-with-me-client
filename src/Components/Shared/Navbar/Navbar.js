@@ -44,6 +44,16 @@ const Navbar = () => {
             </li>
             <li>
               <Link
+                to="/services"
+                aria-label="Services"
+                title="Services"
+                class="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/blog"
                 aria-label="Blog"
                 title="Blog"
@@ -164,6 +174,16 @@ const Navbar = () => {
                           class="font-bold tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Home
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/services"
+                          aria-label="Services"
+                          title="Services"
+                          class="font-bold tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        >
+                          Services
                         </Link>
                       </li>
                       <li>
