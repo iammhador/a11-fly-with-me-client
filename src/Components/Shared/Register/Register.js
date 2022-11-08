@@ -6,9 +6,10 @@ import eye from "../../Assets/icons8-eye-48.png";
 import atSign from "../../Assets/icons8-email-sign-64.png";
 import registerImg from "../../Assets/undraw_secure_login_pdn4.svg";
 import { AuthContext } from "../../Context/Context";
+import toast from "react-hot-toast";
 
 const Register = () => {
-  const { googleLogin } = useContext(AuthContext);
+  const { googleLogin, register } = useContext(AuthContext);
 
   //# Google Register :
   const handleGoogleReg = () => {
@@ -18,6 +19,15 @@ const Register = () => {
   //# Register :
   const handleSubmit = (e) => {
     e.preventDefault();
+    const form = e.target;
+    const username = form.username.value;
+    const phone = form.phone.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    register(email, password)
+      .then(() => toast.success("Successfully Register"))
+      .catch((error) => toast.error(error));
   };
   return (
     <div>
@@ -43,6 +53,7 @@ const Register = () => {
               <div className="relative">
                 <input
                   type="text"
+                  name="username"
                   className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                   placeholder="Enter Username"
                 />
@@ -65,6 +76,7 @@ const Register = () => {
               <div className="relative">
                 <input
                   type="text"
+                  name="phone"
                   className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                   placeholder="Enter Contact Number"
                 />
@@ -86,8 +98,10 @@ const Register = () => {
               <div className="relative">
                 <input
                   type="email"
+                  name="email"
                   className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                   placeholder="Enter email"
+                  required
                 />
 
                 <span className="absolute inset-y-0 right-4 inline-flex items-center">
@@ -107,8 +121,10 @@ const Register = () => {
               <div className="relative">
                 <input
                   type="password"
+                  name="password"
                   className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                   placeholder="Enter password"
+                  required
                 />
 
                 <span className="absolute inset-y-0 right-4 inline-flex items-center">

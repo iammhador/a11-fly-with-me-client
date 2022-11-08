@@ -1,9 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import logo from "../../Assets/icons8-airplane-64.png";
+import { AuthContext } from "../../Context/Context";
+import userAvater from "../../Assets/icons8-person-100.png";
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const { user, logout } = useContext(AuthContext);
+  console.log(user);
+  //# Logout :
+  const handleLogout = () => {
+    logout()
+      .then(() => toast.success("User Logout"))
+      .catch((error) => toast.error(error));
+  };
   return (
     <div className="bg-accent">
       <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 bg-accent">
@@ -23,9 +34,9 @@ const Navbar = () => {
           <ul class="flex items-center hidden space-x-8 lg:flex">
             <li>
               <Link
-                to="/home"
-                aria-label="Our product"
-                title="Our product"
+                to="/"
+                aria-label="Home"
+                title="Home"
                 class="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
                 Home
@@ -34,33 +45,59 @@ const Navbar = () => {
             <li>
               <Link
                 to="/blog"
-                aria-label="Our product"
-                title="Our product"
+                aria-label="Blog"
+                title="Blog"
                 class="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
                 Blog
               </Link>
             </li>
-            <li>
-              <Link
-                to="/login"
-                aria-label="Product pricing"
-                title="Product pricing"
-                class="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
-              >
-                Login
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/register"
-                aria-label="About us"
-                title="About us"
-                class="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
-              >
-                Register
-              </Link>
-            </li>
+
+            {user ? (
+              <>
+                <li>
+                  <button
+                    onClick={handleLogout}
+                    aria-label="Logout"
+                    title="Logout"
+                    class="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  >
+                    Logout
+                  </button>
+                </li>
+                <li class="block relative">
+                  <img
+                    alt="profile"
+                    src={user.photoURL ? user.photoURL : userAvater}
+                    class="mx-auto object-cover rounded-full h-8 w-8 bg-primary"
+                  />
+                  <span class="absolute w-3 border-2 left-1/2 -bottom-2 transform -translate-x-1/2 border-white h-3 bg-green-500 rounded-full"></span>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link
+                    to="/login"
+                    aria-label="Login"
+                    title="Login"
+                    class="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  >
+                    Login
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/register"
+                    aria-label="Register"
+                    title="Register"
+                    class="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  >
+                    Register
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
           <div class="lg:hidden">
             <button
@@ -85,7 +122,7 @@ const Navbar = () => {
               </svg>
             </button>
             {isMenuOpen && (
-              <div class="absolute top-0 left-0 w-full">
+              <div class="absolute top-0 left-0 w-full z-10">
                 <div class="p-5 bg-white border rounded shadow-sm">
                   <div class="flex items-center justify-between mb-4">
                     <div>
@@ -122,8 +159,8 @@ const Navbar = () => {
                       <li>
                         <Link
                           to="/"
-                          aria-label="Our product"
-                          title="Our product"
+                          aria-label="Home"
+                          title="Hpme"
                           class="font-bold tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Home
@@ -132,33 +169,58 @@ const Navbar = () => {
                       <li>
                         <Link
                           to="/blog"
-                          aria-label="Our product"
-                          title="Our product"
+                          aria-label="Blog"
+                          title="Blog"
                           class="font-bold tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Blog
                         </Link>
                       </li>
-                      <li>
-                        <Link
-                          to="/login"
-                          aria-label="Product pricing"
-                          title="Product pricing"
-                          class="font-bold tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          Login
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/register"
-                          aria-label="About us"
-                          title="About us"
-                          class="font-bold tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          Register
-                        </Link>
-                      </li>
+                      {user ? (
+                        <>
+                          <li>
+                            <button
+                              onClick={handleLogout}
+                              aria-label="Logout"
+                              title="Logout"
+                              class="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            >
+                              Logout
+                            </button>
+                          </li>
+                          <li class="block relative">
+                            <img
+                              alt="profile"
+                              src={user.photoURL ? user.photoURL : userAvater}
+                              class="mx-auto object-cover rounded-full h-8 w-8 bg-primary"
+                            />
+                            <span class="absolute w-3 border-2 left-1/2 -bottom-2 transform -translate-x-1/2 border-white h-3 bg-green-500 rounded-full"></span>
+                          </li>
+                        </>
+                      ) : (
+                        <>
+                          <li>
+                            <Link
+                              to="/login"
+                              aria-label="Login"
+                              title="Login"
+                              class="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            >
+                              Login
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/register"
+                              aria-label="Register"
+                              title="Register"
+                              class="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            >
+                              Register
+                            </Link>
+                          </li>
+                        </>
+                      )}
                     </ul>
                   </nav>
                 </div>

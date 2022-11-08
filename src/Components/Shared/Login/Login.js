@@ -4,8 +4,9 @@ import eye from "../../Assets/icons8-eye-48.png";
 import atSign from "../../Assets/icons8-email-sign-64.png";
 import loginImg from "../../Assets/undraw_authentication_re_svpt.svg";
 import { AuthContext } from "../../Context/Context";
+import toast from "react-hot-toast";
 const Login = () => {
-  const { googleLogin } = useContext(AuthContext);
+  const { googleLogin, login } = useContext(AuthContext);
 
   //# Google Login :
   const handleGoogleLogin = () => {
@@ -15,6 +16,17 @@ const Login = () => {
   //# Login :
   const handleLogin = (e) => {
     e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    login(email, password)
+      .then(() => {
+        toast.success("Successfully Logged");
+        form.reset();
+      })
+      .catch((error) => {
+        toast.error(error);
+      });
   };
   return (
     <div>
@@ -40,8 +52,10 @@ const Login = () => {
               <div className="relative">
                 <input
                   type="email"
+                  name="email"
                   className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                   placeholder="Enter email"
+                  required
                 />
 
                 <span className="absolute inset-y-0 right-4 inline-flex items-center">
@@ -61,8 +75,10 @@ const Login = () => {
               <div className="relative">
                 <input
                   type="password"
+                  name="password"
                   className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                   placeholder="Enter password"
+                  required
                 />
 
                 <span className="absolute inset-y-0 right-4 inline-flex items-center">
