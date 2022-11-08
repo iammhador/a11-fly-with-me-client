@@ -1,17 +1,21 @@
 import React from "react";
 import { FaStar, FaDollarSign, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
 
 const AllServices = ({ service }) => {
   const { _id, name, description, price, rating, image } = service;
   return (
     <div>
       <div href="#" class="block rounded-lg p-4 shadow-sm shadow-indigo-100">
-        <img
-          alt="Home"
-          src={image}
-          class="h-56 w-full rounded-md object-cover"
-        />
+        <PhotoView src={image}>
+          <img
+            alt="Home"
+            src={image}
+            class="h-56 w-full rounded-md object-cover"
+          />
+        </PhotoView>
 
         <div class="mt-2">
           <dl>
