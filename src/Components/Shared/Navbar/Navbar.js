@@ -165,7 +165,7 @@ const Navbar = () => {
                     </div>
                   </div>
                   <nav>
-                    <ul class="space-y-4">
+                    <ul class="space-y-4 text-left">
                       <li>
                         <Link
                           to="/"
@@ -212,7 +212,7 @@ const Navbar = () => {
                             <img
                               alt="profile"
                               src={user.photoURL ? user.photoURL : userAvater}
-                              class="mx-auto object-cover rounded-full h-8 w-8 bg-primary"
+                              class="mx-auto object-cover rounded-full h-8 w-8 bg-primary "
                             />
                             <span class="absolute w-3 border-2 left-1/2 -bottom-2 transform -translate-x-1/2 border-white h-3 bg-green-500 rounded-full"></span>
                           </li>

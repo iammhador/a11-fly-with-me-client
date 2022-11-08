@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 import bannnerImg from "../../Assets/undraw_adventure_re_ncqp.svg";
 const Banner = () => {
   return (
@@ -18,12 +19,10 @@ const Banner = () => {
               contact with me.
             </p>
             <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-              <Link
-                rel="noopener noreferrer"
-                to=""
-                className="px-8 py-3 text-lg font-semibold rounded bg-secondary text-neutral hover:bg-info"
-              >
-                Contact
+              <Link to="/">
+                <button className="flex items-center px-8 py-3 text-lg font-semibold rounded bg-secondary text-neutral hover:bg-info mx-auto">
+                  Contact <FaArrowRight className="ml-2" />
+                </button>
               </Link>
             </div>
           </div>

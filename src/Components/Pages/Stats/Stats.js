@@ -2,8 +2,8 @@ import React from "react";
 
 const Stats = () => {
   return (
-    <div className="mb-10">
-      <h1 className="text-center text-5xl font-bold text-info uppercase">
+    <div className="mt-28 mb-10">
+      <h1 className="text-center text-5xl font-bold text-info uppercase mt-10">
         Our Stats
       </h1>
       <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -37,7 +37,7 @@ const Stats = () => {
 
           <div class="text-center">
             <h6 class="text-4xl font-bold lg:text-5xl xl:text-6xl text-secondary">
-              13
+              9
             </h6>
             <p class="text-sm font-medium tracking-widest text-primary uppercase lg:text-base">
               Country

@@ -12,9 +12,9 @@ However, your website cannot be related to your previous assignments or any prac
 Examples: Online delivery service review, Online trainer review, travel/tourist service, Lawyer, Photographer (wedding photographer, sports photographer, journalism photographer, wild photographer, etc.), Immigration & VISA Consultant, Tax Lawyer, Accountant Service, Doctor/Dentist (single doctor. not a hospital or a diagnostic center), Journalist, YouTuber, Cloud kitchen, etc. If you have another idea for an individual service provider, please let us know before proceeding. (Please note that your website can not be related to a marketplace freelancer working on fiver, Upwork, etc. It can not be a portfolio website)
 
 //! Main Requirements :
-1. The homepage will have a Navbar, a slider/banner/ a meaningful section. Under the navbar, display a list of services. There will be at least 6 services in the database, but here, you will limit the number to only 3 i.e. on the home page, you will show maximum of 3 services (this should be done in the backend). Also, add a meaningful footer.
+//* 1. The homepage will have a Navbar, a slider/banner/ a meaningful section. Under the navbar, display a list of services. There will be at least 6 services in the database, but here, you will limit the number to only 3 i.e. on the home page, you will show maximum of 3 services (this should be done in the backend). Also, add a meaningful footer.
 
-2.There will be a " see all" button/icon under the 3 services. When clicking the button/icon, take the user to the /services route and show all the services on that page.
+//* 2.There will be a " see all" button/icon under the 3 services. When clicking the button/icon, take the user to the /services route and show all the services on that page.
 
 //* 3. Add two extra sections on the home page. Make sure it is unique and relevant to your website.
 
