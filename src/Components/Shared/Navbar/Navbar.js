@@ -66,6 +66,27 @@ const Navbar = () => {
             {user ? (
               <>
                 <li>
+                  <Link
+                    to="/addservice"
+                    aria-label="Add Service"
+                    title="Add Service"
+                    class="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  >
+                    Add Service
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/review"
+                    aria-label="My Review"
+                    title="My Review"
+                    class="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  >
+                    My Review
+                  </Link>
+                </li>
+                <li>
                   <button
                     onClick={handleLogout}
                     aria-label="Logout"
@@ -77,6 +98,7 @@ const Navbar = () => {
                 </li>
                 <li class="block relative">
                   <img
+                    alt="User"
                     referrerPolicy="no-referrer"
                     src={user.photoURL ? user.photoURL : userAvater}
                     class="mx-auto object-cover rounded-full h-8 w-8 bg-primary"
@@ -198,6 +220,28 @@ const Navbar = () => {
                       </li>
                       {user ? (
                         <>
+                          <li>
+                            <Link
+                              to="/addservice"
+                              aria-label="Add Service"
+                              title="Add Service"
+                              class="font-bold tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            >
+                              Add Service
+                            </Link>
+                          </li>
+
+                          <li>
+                            <Link
+                              to="/reviews"
+                              aria-label="Reviews"
+                              title="Reviews"
+                              class="font-bold tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            >
+                              My Reviews
+                            </Link>
+                          </li>
+
                           <li>
                             <button
                               onClick={handleLogout}

@@ -3,9 +3,8 @@ import { useLoaderData } from "react-router-dom";
 import AllServices from "../AllServices/AllServices";
 const Services = () => {
   const services = useLoaderData([]);
-  console.log(services);
   return (
-    <div className="my-10 w-4/5 mx-auto">
+    <div className="my-10 md:w-4/5 sm:w-full mx-auto">
       <h1 className="text-center text-5xl font-bold text-info uppercase mb-5">
         Our Services
       </h1>

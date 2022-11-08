@@ -1,34 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { FaStar, FaDollarSign, FaArrowRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import React from "react";
+import { useLoaderData } from "react-router-dom";
+import { FaStar, FaDollarSign } from "react-icons/fa";
 import { PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
-
-const AllServices = ({ service }) => {
-  const { _id, name, description, price, rating, image } = service;
-  const [serviceData, setServiceData] = useState();
-
-  //# Fetch Data :
-  useEffect(() => {
-    fetch(`http://localhost:5000/services/${_id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "Application/json",
-      },
-      body: JSON.stringify(_id),
-    })
-      .then((res) => res.json())
-      .then((data) => setServiceData(data));
-  }, [_id]);
+const ServiceDetails = () => {
+  const singleService = useLoaderData();
+  const { name, description, price, rating, image } = singleService;
 
   return (
-    <div>
+    <div className="md:w-2/3 sm:w-full  mx-auto px-20 my-20">
       <div href="#" class="block rounded-lg p-4 shadow-sm shadow-indigo-100">
         <PhotoView src={image}>
           <img
             alt="Home"
             src={image}
-            class="h-56 w-full rounded-md object-cover"
+            class="h-96 w-full rounded-md object-cover"
           />
         </PhotoView>
 
@@ -38,13 +24,11 @@ const AllServices = ({ service }) => {
               <dd class="text-left text-xl font-bold text-secondary mt-4 mb-1">
                 {name}
               </dd>
-              <p className="text-left text-primary">
-                {description.slice(0, 100)} ...
-              </p>
+              <p className="text-left text-primary">{description}</p>
             </div>
           </dl>
 
-          <div class="mt-6 flex items-center gap-8 text-xs">
+          <div class="mt-6 flex items-center justify-between gap-8 text-xs">
             <div class="sm:inline-flex sm:shrink-0 sm:items-center">
               <FaDollarSign className="text-2xl text-secondary" />
 
@@ -64,15 +48,6 @@ const AllServices = ({ service }) => {
                 <p class="font-medium text-primary">{rating}</p>
               </div>
             </div>
-
-            <div class="sm:inline-flex sm:shrink-0 sm:items-center">
-              <Link to={`/services/${_id}`}>
-                <button className="flex items-center py-3 px-5 bg-secondary rounded text-neutral hover:bg-info">
-                  Details
-                  <FaArrowRight className="ml-2" />
-                </button>
-              </Link>
-            </div>
           </div>
         </div>
       </div>
@@ -80,4 +55,4 @@ const AllServices = ({ service }) => {
   );
 };
 
-export default AllServices;
+export default ServiceDetails;
