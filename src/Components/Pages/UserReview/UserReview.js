@@ -2,24 +2,9 @@ import React from "react";
 import toast from "react-hot-toast";
 import { FaPen, FaTrash } from "react-icons/fa";
 
-const UserReview = ({ review }) => {
+const UserReview = ({ review, handleDelete }) => {
   const { _id, email, massage, rating, serviceId, title } = review;
-  //   console.log(_id);
-  const handleDelete = (id) => {
-    const confirmation = window.confirm(
-      "Are you sure you want to delete the review?"
-    );
-    if (confirmation) {
-      fetch(`http://localhost:5000/reviews/${id}`, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          toast.success("Review Deleted Successfully");
-        });
-    }
-  };
+
   return (
     <div>
       <div className="overflow-x-auto w-full">
