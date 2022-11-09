@@ -1,8 +1,7 @@
 import React from "react";
-import toast from "react-hot-toast";
 import { FaPen, FaTrash } from "react-icons/fa";
 
-const UserReview = ({ review, handleDelete }) => {
+const UserReview = ({ review, handleDelete, handleEdit }) => {
   const { _id, email, massage, rating, serviceId, title } = review;
 
   return (
@@ -40,13 +39,48 @@ const UserReview = ({ review, handleDelete }) => {
                 <p>{email}</p>
               </td>
               <th>
-                <button className=" py-3 px-4 bg-primary text-neutral text-xl text-center rounded hover:bg-secondary mr-1">
-                  <FaPen className="" />
-                </button>
+                <label
+                  htmlFor="my-modal-5"
+                  className="btn py-3 px-4 bg-primary text-neutral text-xl text-center rounded hover:bg-secondary mr-1"
+                >
+                  <FaPen />
+                </label>
+
+                <input
+                  type="checkbox"
+                  id="my-modal-5"
+                  className="modal-toggle"
+                />
+                <div className="modal">
+                  <div className="modal-box w-11/12 max-w-5xl">
+                    <div className="w-full mt-6">
+                      <input
+                        type="text"
+                        name="title"
+                        required
+                        defaultValue={title}
+                        readOnly
+                        className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600  focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                      />
+                      <textarea
+                        name="massage"
+                        className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 dark:placeholder-gray-600 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        placeholder="Description"
+                        required
+                      ></textarea>
+                      <label
+                        htmlFor="my-modal-5"
+                        className="btn float-right mt-2"
+                      >
+                        Yay!
+                      </label>
+                    </div>
+                  </div>
+                </div>
 
                 <button
                   onClick={() => handleDelete(_id)}
-                  className=" py-3 px-4 bg-primary text-neutral text-xl text-center rounded hover:bg-secondary ml-1"
+                  className="py-3 px-4 bg-primary text-neutral text-xl text-center rounded hover:bg-secondary ml-1"
                 >
                   <FaTrash />
                 </button>

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from "../../Assets/icons8-airplane-64.png";
 import { AuthContext } from "../../Context/Context";
 import userAvater from "../../Assets/icons8-person-100.png";
@@ -33,58 +33,78 @@ const Navbar = () => {
           </Link>
           <ul className="flex items-center hidden space-x-8 lg:flex">
             <li>
-              <Link
+              <NavLink
                 to="/"
                 aria-label="Home"
                 title="Home"
-                className="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                className={({ isActive }) =>
+                  isActive
+                    ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                }
               >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/services"
                 aria-label="Services"
                 title="Services"
-                className="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                className={({ isActive }) =>
+                  isActive
+                    ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                }
               >
                 Services
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/blog"
                 aria-label="Blog"
                 title="Blog"
-                className="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                className={({ isActive }) =>
+                  isActive
+                    ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                }
               >
                 Blog
-              </Link>
+              </NavLink>
             </li>
 
             {user ? (
               <>
                 <li>
-                  <Link
+                  <NavLink
                     to="/addservices"
                     aria-label="Add Service"
                     title="Add Service"
-                    className="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    }
                   >
                     Add Service
-                  </Link>
+                  </NavLink>
                 </li>
 
                 <li>
-                  <Link
+                  <NavLink
                     to="/review"
                     aria-label="My Review"
                     title="My Review"
-                    className="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    }
                   >
                     My Review
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
                   <button
@@ -109,24 +129,32 @@ const Navbar = () => {
             ) : (
               <>
                 <li>
-                  <Link
+                  <NavLink
                     to="/login"
                     aria-label="Login"
                     title="Login"
-                    className="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    }
                   >
                     Login
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link
+                  <NavLink
                     to="/register"
                     aria-label="Register"
                     title="Register"
-                    className="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    }
                   >
                     Register
-                  </Link>
+                  </NavLink>
                 </li>
               </>
             )}
@@ -158,7 +186,7 @@ const Navbar = () => {
                 <div className="p-5 bg-white border rounded shadow-sm">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <Link
+                      <NavLink
                         to="/"
                         aria-label="Company"
                         title="Company"
@@ -168,7 +196,7 @@ const Navbar = () => {
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                           Fly With Me
                         </span>
-                      </Link>
+                      </NavLink>
                     </div>
                     <div>
                       <button
@@ -189,57 +217,77 @@ const Navbar = () => {
                   <nav>
                     <ul className="space-y-4 text-left">
                       <li>
-                        <Link
+                        <NavLink
                           to="/"
                           aria-label="Home"
-                          title="Hpme"
-                          className="font-bold tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          title="Home"
+                          className={({ isActive }) =>
+                            isActive
+                              ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          }
                         >
                           Home
-                        </Link>
+                        </NavLink>
                       </li>
                       <li>
-                        <Link
+                        <NavLink
                           to="/services"
                           aria-label="Services"
                           title="Services"
-                          className="font-bold tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          className={({ isActive }) =>
+                            isActive
+                              ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          }
                         >
                           Services
-                        </Link>
+                        </NavLink>
                       </li>
                       <li>
-                        <Link
+                        <NavLink
                           to="/blog"
                           aria-label="Blog"
                           title="Blog"
-                          className="font-bold tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          className={({ isActive }) =>
+                            isActive
+                              ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          }
                         >
                           Blog
-                        </Link>
+                        </NavLink>
                       </li>
                       {user ? (
                         <>
                           <li>
-                            <Link
+                            <NavLink
                               to="/addservices"
                               aria-label="Add Service"
                               title="Add Service"
-                              className="font-bold tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              className={({ isActive }) =>
+                                isActive
+                                  ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                  : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              }
                             >
                               Add Service
-                            </Link>
+                            </NavLink>
                           </li>
 
                           <li>
-                            <Link
+                            <NavLink
                               to="/reviews"
                               aria-label="Reviews"
                               title="Reviews"
-                              className="font-bold tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              className={({ isActive }) =>
+                                isActive
+                                  ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                  : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              }
                             >
                               My Reviews
-                            </Link>
+                            </NavLink>
                           </li>
 
                           <li>
@@ -264,24 +312,32 @@ const Navbar = () => {
                       ) : (
                         <>
                           <li>
-                            <Link
+                            <NavLink
                               to="/login"
                               aria-label="Login"
                               title="Login"
-                              className="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              className={({ isActive }) =>
+                                isActive
+                                  ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                  : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              }
                             >
                               Login
-                            </Link>
+                            </NavLink>
                           </li>
                           <li>
-                            <Link
+                            <NavLink
                               to="/register"
                               aria-label="Register"
                               title="Register"
-                              className="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              className={({ isActive }) =>
+                                isActive
+                                  ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                  : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              }
                             >
                               Register
-                            </Link>
+                            </NavLink>
                           </li>
                         </>
                       )}

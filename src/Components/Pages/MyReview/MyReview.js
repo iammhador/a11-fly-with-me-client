@@ -36,6 +36,23 @@ const MyReview = () => {
         });
     }
   };
+
+  // const handleEdit = (id) => {
+  //   const confirmation = window.confirm(
+  //     "Are you sure you want to edit the review?"
+  //   );
+  //   if (confirmation) {
+  //     fetch(`http://localhost:5000/reviews/${id}`, {
+  //       method: "PATCH",
+  //     })
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         if (data.deletedCount > 0) {
+  //           toast.success("Review Deleted Successfully");
+  //         }
+  //       });
+  //   }
+  // };
   return (
     <div className="my-20">
       <h1 className="lg:text-5xl md:text-4xl text-2xl font-bold px-4 leading-10 text-info mt-6 text-center uppercase mb-10">
@@ -47,6 +64,7 @@ const MyReview = () => {
             key={review._id}
             review={review}
             handleDelete={handleDelete}
+            // handleEdit={handleEdit}
           />
         ))}
       </div>
