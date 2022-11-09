@@ -46,3 +46,9 @@ Examples: Online delivery service review, Online trainer review, travel/tourist 
 //* 13.2. What is JWT, and how does it work?
 //* 13.3. What is the difference between javascript and NodeJS?
 //* 13.4. How does NodeJS handle multiple requests at the same time?
+
+
+1. Private Route
+2. Navigate 
+3. NavLink
+4. 

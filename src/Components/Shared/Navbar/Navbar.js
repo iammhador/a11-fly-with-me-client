@@ -67,7 +67,7 @@ const Navbar = () => {
               <>
                 <li>
                   <Link
-                    to="/addservice"
+                    to="/addservices"
                     aria-label="Add Service"
                     title="Add Service"
                     class="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -222,7 +222,7 @@ const Navbar = () => {
                         <>
                           <li>
                             <Link
-                              to="/addservice"
+                              to="/addservices"
                               aria-label="Add Service"
                               title="Add Service"
                               class="font-bold tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"

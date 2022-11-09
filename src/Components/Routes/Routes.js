@@ -7,6 +7,7 @@ import Login from "../Shared/Login/Login";
 import Register from "../Shared/Register/Register";
 import Services from "../Pages/Services/Services";
 import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
+import AddServices from "../Pages/AddServices/AddServices";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
           fetch(`http://localhost:5000/services/${params.id}`),
       },
       { path: "/blog", element: <Blog /> },
+      { path: "/addservices", element: <AddServices /> },
       { path: "/login", element: <Login /> },
       { path: "/register", element: <Register /> },
     ],

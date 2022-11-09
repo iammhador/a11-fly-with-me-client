@@ -1,6 +1,6 @@
 import React from "react";
 import toast from "react-hot-toast";
-import contact from "../../Assets/undraw_contact_us_re_4qqt.svg";
+import contact from "../../Assets/Contact us-pana.svg";
 const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,7 +16,7 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact">
+    <div id="contact ">
       <section className=" mb-10">
         <div className="container px-6 py-12 mx-auto">
           <h1 className="text-center text-5xl font-bold text-info uppercase mt-10">
@@ -24,12 +24,7 @@ const Contact = () => {
           </h1>
           <p className="mt-3 text-primary">To Know More Information</p>
           <div className="lg:flex lg:items-center lg:-mx-6">
-            <img
-              src={contact}
-              alt=""
-              className="w-5/12 my-auto
-            "
-            />
+            <img src={contact} alt="Contact" className="w-5/12" />
 
             <div className="mt-8 lg:w-1/2 lg:mx-6 text-left">
               <div className="w-full px-8 py-10 mx-auto overflow-hidden b rounded-lg shadow-2xllg:max-w-xl shadow-gray-300/50 dark:shadow-black/50">
