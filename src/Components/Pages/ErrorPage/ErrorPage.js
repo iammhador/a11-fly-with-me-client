@@ -4,9 +4,9 @@ import errorImg from "../../Assets/404 error with a landscape-pana.svg";
 const ErrorPage = () => {
   return (
     <div>
-      <div class="grid h-screen place-content-center bg-white">
+      <div className="grid h-screen place-content-center bg-white">
         <img src={errorImg} alt="Error" className="w-96" />
-        <p class="uppercase tracking-widest text-secondary mt-3">
+        <p className="uppercase tracking-widest text-secondary mt-3">
           404 | Not Found
         </p>
         <Link to="/">

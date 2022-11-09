@@ -8,6 +8,8 @@ import Register from "../Shared/Register/Register";
 import Services from "../Pages/Services/Services";
 import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
 import AddServices from "../Pages/AddServices/AddServices";
+import Review from "../Pages/Review/Review";
+import MyReview from "../Pages/MyReview/MyReview";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +31,7 @@ export const router = createBrowserRouter([
       },
       { path: "/blog", element: <Blog /> },
       { path: "/addservices", element: <AddServices /> },
+      { path: "/review", element: <MyReview /> },
       { path: "/login", element: <Login /> },
       { path: "/register", element: <Register /> },
     ],
