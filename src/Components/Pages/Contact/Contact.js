@@ -27,7 +27,7 @@ const Contact = () => {
             <img src={contact} alt="Contact" className="w-5/12" />
 
             <div className="mt-8 lg:w-1/2 lg:mx-6 text-left">
-              <div className="w-full px-8 py-10 mx-auto overflow-hidden b rounded-lg shadow-2xllg:max-w-xl shadow-gray-300/50 dark:shadow-black/50">
+              <div className="w-full px-8 py-10 mx-auto overflow-hidden b rounded-lg  lg:max-w-xl shadow-gray-300/50 dark:shadow-black/50">
                 <form onSubmit={handleSubmit} className="mt-6">
                   <div className="flex-1">
                     <label className="block mb-2 text-sm text-primary">

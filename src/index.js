@@ -12,7 +12,7 @@ root.render(
     <Context>
       <PhotoProvider>
         <App />
-        <Toaster />
+        <Toaster position="top-right" reverseOrder={false} />
       </PhotoProvider>
     </Context>
   </React.StrictMode>

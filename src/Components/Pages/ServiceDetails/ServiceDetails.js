@@ -3,12 +3,17 @@ import { useLoaderData } from "react-router-dom";
 import { FaStar, FaDollarSign } from "react-icons/fa";
 import { PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
+import AddReview from "../AddReview/AddReview";
+import ShowReview from "../ShowReview/ShowReview";
 const ServiceDetails = () => {
   const singleService = useLoaderData();
   const { name, description, price, rating, image } = singleService;
 
   return (
     <div className="md:w-2/3 sm:w-full  mx-auto px-20 my-20">
+      <h1 className="text-center md:text-5xl sm:text-xl font-bold text-info uppercase mb-5">
+        Information About {name}
+      </h1>
       <div href="#" class="block rounded-lg p-4 shadow-sm shadow-indigo-100">
         <PhotoView src={image}>
           <img
@@ -49,6 +54,24 @@ const ServiceDetails = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="my-10">
+        <h1 className="text-center text-5xl font-bold text-info uppercase mb-5">
+          Add Review
+        </h1>
+        <div>
+          <AddReview singleService={singleService} />
+        </div>
+      </div>
+
+      <div className="my-10 mt-20">
+        <h1 className="text-center text-5xl font-bold text-info uppercase mb-5">
+          All Reviews
+        </h1>
+        <div>
+          <ShowReview singleService={singleService} />
         </div>
       </div>
     </div>
