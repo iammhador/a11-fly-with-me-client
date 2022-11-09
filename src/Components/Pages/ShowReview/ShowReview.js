@@ -1,24 +1,30 @@
 import React, { useEffect, useState } from "react";
+import Review from "../Review/Review";
 
 const ShowReview = ({ singleService }) => {
-  const [showReview, setShowReview] = useState();
+  const [showReview, setShowReview] = useState([]);
   const { _id } = singleService;
-  console.log(showReview);
-  //   console.log(_id);
+  // const { email, massage, rating, title, photo } = showReview;
+  // console.log(showReview);
   useEffect(() => {
     fetch(`http://localhost:5000/reviews/${_id}`, {
-      method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(_id),
     })
       .then((res) => res.json())
       .then((data) => {
         setShowReview(data);
       });
-  }, []);
-  return <div>Hello World</div>;
+  }, [_id]);
+
+  return (
+    <div>
+      {showReview.map((review) => (
+        <Review key={review._id} review={review} />
+      ))}
+    </div>
+  );
 };
 
 export default ShowReview;

@@ -57,21 +57,21 @@ const ServiceDetails = () => {
         </div>
       </div>
 
-      <div className="my-10">
-        <h1 className="text-center text-5xl font-bold text-info uppercase mb-5">
-          Add Review
-        </h1>
-        <div>
-          <AddReview singleService={singleService} />
-        </div>
-      </div>
-
       <div className="my-10 mt-20">
         <h1 className="text-center text-5xl font-bold text-info uppercase mb-5">
           All Reviews
         </h1>
         <div>
           <ShowReview singleService={singleService} />
+        </div>
+      </div>
+
+      <div className="my-10">
+        <h1 className="text-center text-5xl font-bold text-info uppercase mb-5">
+          Add Your Review
+        </h1>
+        <div>
+          <AddReview singleService={singleService} />
         </div>
       </div>
     </div>

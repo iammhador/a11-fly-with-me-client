@@ -11,11 +11,9 @@ const AllServices = ({ service }) => {
   //# Fetch Data :
   useEffect(() => {
     fetch(`http://localhost:5000/services/${_id}`, {
-      method: "GET",
       headers: {
         "Content-Type": "Application/json",
       },
-      body: JSON.stringify(_id),
     })
       .then((res) => res.json())
       .then((data) => setServiceData(data));
