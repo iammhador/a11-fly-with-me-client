@@ -21,7 +21,7 @@ const AddReview = ({ singleService }) => {
       photo: user.photoURL,
     };
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://fly-with-me.vercel.app/reviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

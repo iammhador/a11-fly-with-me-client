@@ -4,10 +4,9 @@ import Review from "../Review/Review";
 const ShowReview = ({ singleService }) => {
   const [showReview, setShowReview] = useState([]);
   const { _id } = singleService;
-  // const { email, massage, rating, title, photo } = showReview;
-  // console.log(showReview);
+
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews/${_id}`, {
+    fetch(`https://fly-with-me.vercel.app/reviews/${_id}`, {
       headers: {
         "Content-Type": "application/json",
       },

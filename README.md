@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+Site Name : Fly With Me
+Develop By : Mehedy Hasan Ador
+Site Description : 'Fly With Me' is a tourist guide service site. Who are new and don't know where and how to go places, We help them to find best and perfect place for him/ her.
+I Have five years of experience on this sector. If you want to know more, Fill free to contact me.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Framework : Tailwind
+Component Library : Daisy UI, Hyper UI, Float UI, Mamba, Tailwinduikit, Tailwind-kit And Many More.
+Images : https://www.pexels.com/
+Illustrator image : https://undraw.co/ and https://storyset.com/
+Image Size Compromise : Tiny Png
+Icons : React Icon
+Special NPM Package : React-Phot_view
 
-## Available Scripts
+Site Information :
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Have Navbar
+2. Have Footer
+3. Have Contact Form
+4. Have Testimonials
+5. Have Server Stats
+6. Show All Services
+7. Show Last Added Three Services
+8. Show Service Details
+9. You Can Write Review
+10. Showed All Review
+11. Blog Section
+12. Login And Register Different Route
+13. Private Route
+14. Your Review
+15. You Can Delete Your Review

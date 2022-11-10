@@ -11,7 +11,6 @@ const AddServices = () => {
     const price = form.price.value;
     const rating = form.rating.value;
     const image = form.image.value;
-    console.log(title, description, price, rating, image);
     const serviceData = {
       name: title,
       description: description,
@@ -20,7 +19,7 @@ const AddServices = () => {
       image: image,
     };
 
-    fetch("http://localhost:5000/services", {
+    fetch("https://fly-with-me.vercel.app/services", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,8 +27,7 @@ const AddServices = () => {
       body: JSON.stringify(serviceData),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then(() => {
         toast.success("Service Successfully Added");
         form.reset();
       });

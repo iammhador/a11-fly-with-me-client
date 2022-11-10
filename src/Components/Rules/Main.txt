@@ -50,5 +50,4 @@ Examples: Online delivery service review, Online trainer review, travel/tourist 
 
 1. Private Route
 2. Navigate 
-3. NavLink
-4. Change Route Name ( 63.5 )
+3. Change Route Name ( 63.5 )

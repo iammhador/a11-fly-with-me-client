@@ -8,8 +8,8 @@ import Register from "../Shared/Register/Register";
 import Services from "../Pages/Services/Services";
 import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
 import AddServices from "../Pages/AddServices/AddServices";
-import Review from "../Pages/Review/Review";
 import MyReview from "../Pages/MyReview/MyReview";
+import EditReview from "../Pages/EditReview/EditReview";
 
 export const router = createBrowserRouter([
   {
@@ -21,17 +21,23 @@ export const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services />,
-        loader: () => fetch("http://localhost:5000/services"),
+        loader: () => fetch("https://fly-with-me.vercel.app/services"),
       },
       {
         path: "/services/:id",
         element: <ServiceDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(`https://fly-with-me.vercel.app/services/${params.id}`),
       },
       { path: "/blog", element: <Blog /> },
       { path: "/addservices", element: <AddServices /> },
       { path: "/review", element: <MyReview /> },
+      {
+        path: "/review/:id",
+        element: <EditReview />,
+        loader: ({ params }) =>
+          fetch(`https://fly-with-me.vercel.app/allreviews/${params.id}`),
+      },
       { path: "/login", element: <Login /> },
       { path: "/register", element: <Register /> },
     ],

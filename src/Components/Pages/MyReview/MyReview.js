@@ -5,9 +5,9 @@ import UserReview from "../UserReview/UserReview";
 const MyReview = () => {
   const [userReview, setUserReview] = useState([]);
   const { user } = useContext(AuthContext);
-  console.log(user?.email);
+
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+    fetch(`https://fly-with-me.vercel.app/reviews?email=${user?.email}`, {
       headers: {
         "Content-Type": "Application/json",
       },
@@ -23,7 +23,7 @@ const MyReview = () => {
       "Are you sure you want to delete the review?"
     );
     if (confirmation) {
-      fetch(`http://localhost:5000/reviews/${id}`, {
+      fetch(`https://fly-with-me.vercel.app/reviews/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -37,22 +37,6 @@ const MyReview = () => {
     }
   };
 
-  // const handleEdit = (id) => {
-  //   const confirmation = window.confirm(
-  //     "Are you sure you want to edit the review?"
-  //   );
-  //   if (confirmation) {
-  //     fetch(`http://localhost:5000/reviews/${id}`, {
-  //       method: "PATCH",
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         if (data.deletedCount > 0) {
-  //           toast.success("Review Deleted Successfully");
-  //         }
-  //       });
-  //   }
-  // };
   return (
     <div className="my-20">
       <h1 className="lg:text-5xl md:text-4xl text-2xl font-bold px-4 leading-10 text-info mt-6 text-center uppercase mb-10">
@@ -64,7 +48,6 @@ const MyReview = () => {
             key={review._id}
             review={review}
             handleDelete={handleDelete}
-            // handleEdit={handleEdit}
           />
         ))}
       </div>
