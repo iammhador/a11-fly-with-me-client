@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import user from "../../Assets/icons8-account-48.png";
 import phone from "../../Assets/icons8-ringer-volume-64.png";
 import eye from "../../Assets/icons8-eye-48.png";
@@ -7,13 +7,18 @@ import atSign from "../../Assets/icons8-email-sign-64.png";
 import registerImg from "../../Assets/undraw_secure_login_pdn4.svg";
 import { AuthContext } from "../../Context/Context";
 import toast from "react-hot-toast";
+import useTitle from "../../Hooks/useTitle";
 
 const Register = () => {
   const { googleLogin, register } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
 
+  useTitle("Register");
   //# Google Register :
   const handleGoogleReg = () => {
-    googleLogin();
+    googleLogin().then(() => navigate(from, { replace: true }));
   };
 
   //# Register :
@@ -26,8 +31,14 @@ const Register = () => {
     const password = form.password.value;
 
     register(email, password)
-      .then(() => toast.success("Successfully Register"))
-      .catch((error) => toast.error(error));
+      .then(() => {
+        form.reset();
+        toast.success("Successfully Register");
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        toast.error(error);
+      });
   };
   return (
     <div>
@@ -46,7 +57,7 @@ const Register = () => {
             className="mx-auto mt-8 mb-0 max-w-md space-y-4"
           >
             <div>
-              <label for="username" className="sr-only">
+              <label htmlFor="username" className="sr-only">
                 Username
               </label>
 
@@ -69,7 +80,7 @@ const Register = () => {
             </div>
 
             <div>
-              <label for="phone" className="sr-only">
+              <label htmlFor="phone" className="sr-only">
                 Phone Number
               </label>
 
@@ -91,7 +102,7 @@ const Register = () => {
               </div>
             </div>
             <div>
-              <label for="email" className="sr-only">
+              <label htmlFor="email" className="sr-only">
                 Email
               </label>
 
@@ -115,7 +126,7 @@ const Register = () => {
             </div>
 
             <div>
-              <label for="password" className="sr-only">
+              <label htmlFor="password" className="sr-only">
                 Password
               </label>
               <div className="relative">

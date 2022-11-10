@@ -1,7 +1,10 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 import AllServices from "../AllServices/AllServices";
 const Services = () => {
+  useTitle("Service");
+
   const services = useLoaderData([]);
   return (
     <div className="my-10 md:w-4/5 sm:w-full mx-auto">

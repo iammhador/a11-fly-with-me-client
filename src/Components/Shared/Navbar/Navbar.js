@@ -75,46 +75,48 @@ const Navbar = () => {
               </NavLink>
             </li>
 
+            <li>
+              <NavLink
+                to="/addservices"
+                aria-label="Add Service"
+                title="Add Service"
+                className={({ isActive }) =>
+                  isActive
+                    ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                }
+              >
+                Add Service
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/review"
+                aria-label="My Review"
+                title="My Review"
+                className={({ isActive }) =>
+                  isActive
+                    ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                }
+              >
+                My Review
+              </NavLink>
+            </li>
             {user ? (
               <>
                 <li>
-                  <NavLink
-                    to="/addservices"
-                    aria-label="Add Service"
-                    title="Add Service"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    }
-                  >
-                    Add Service
-                  </NavLink>
-                </li>
-
-                <li>
-                  <NavLink
-                    to="/review"
-                    aria-label="My Review"
-                    title="My Review"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    }
-                  >
-                    My Review
-                  </NavLink>
-                </li>
-                <li>
-                  <button
-                    onClick={handleLogout}
-                    aria-label="Logout"
-                    title="Logout"
-                    className="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
-                  >
-                    Logout
-                  </button>
+                  <Link to="/">
+                    <button
+                      onClick={handleLogout}
+                      aria-label="Logout"
+                      title="Logout"
+                      className="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    >
+                      Logout
+                    </button>
+                  </Link>
                 </li>
                 <li className="block relative">
                   <img
@@ -258,47 +260,49 @@ const Navbar = () => {
                           Blog
                         </NavLink>
                       </li>
+
+                      <li>
+                        <NavLink
+                          to="/addservices"
+                          aria-label="Add Service"
+                          title="Add Service"
+                          className={({ isActive }) =>
+                            isActive
+                              ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          }
+                        >
+                          Add Service
+                        </NavLink>
+                      </li>
+
+                      <li>
+                        <NavLink
+                          to="/reviews"
+                          aria-label="Reviews"
+                          title="Reviews"
+                          className={({ isActive }) =>
+                            isActive
+                              ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          }
+                        >
+                          My Reviews
+                        </NavLink>
+                      </li>
                       {user ? (
                         <>
                           <li>
-                            <NavLink
-                              to="/addservices"
-                              aria-label="Add Service"
-                              title="Add Service"
-                              className={({ isActive }) =>
-                                isActive
-                                  ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                  : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
-                              }
-                            >
-                              Add Service
-                            </NavLink>
-                          </li>
-
-                          <li>
-                            <NavLink
-                              to="/reviews"
-                              aria-label="Reviews"
-                              title="Reviews"
-                              className={({ isActive }) =>
-                                isActive
-                                  ? "font-bold tracking-wide text-secondary transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                  : "font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
-                              }
-                            >
-                              My Reviews
-                            </NavLink>
-                          </li>
-
-                          <li>
-                            <button
-                              onClick={handleLogout}
-                              aria-label="Logout"
-                              title="Logout"
-                              className="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
-                            >
-                              Logout
-                            </button>
+                            <Link to="/">
+                              <button
+                                onClick={handleLogout}
+                                aria-label="Logout"
+                                title="Logout"
+                                className="font-bold tracking-wide text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              >
+                                Logout
+                              </button>
+                            </Link>
                           </li>
                           <li className="block relative">
                             <img

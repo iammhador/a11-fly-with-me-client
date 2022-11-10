@@ -10,6 +10,7 @@ import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
 import AddServices from "../Pages/AddServices/AddServices";
 import MyReview from "../Pages/MyReview/MyReview";
 import EditReview from "../Pages/EditReview/EditReview";
+import PrivateRoutes from "./PrivateRoutes";
 
 export const router = createBrowserRouter([
   {
@@ -30,15 +31,32 @@ export const router = createBrowserRouter([
           fetch(`https://fly-with-me.vercel.app/services/${params.id}`),
       },
       { path: "/blog", element: <Blog /> },
-      { path: "/addservices", element: <AddServices /> },
-      { path: "/review", element: <MyReview /> },
+      {
+        path: "/addservices",
+        element: (
+          <PrivateRoutes>
+            <AddServices />{" "}
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/review",
+        element: (
+          <PrivateRoutes>
+            <MyReview />
+          </PrivateRoutes>
+        ),
+      },
       {
         path: "/review/:id",
         element: <EditReview />,
         loader: ({ params }) =>
           fetch(`https://fly-with-me.vercel.app/allreviews/${params.id}`),
       },
-      { path: "/login", element: <Login /> },
+      {
+        path: "/login",
+        element: <Login />,
+      },
       { path: "/register", element: <Register /> },
     ],
   },

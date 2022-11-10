@@ -1,8 +1,11 @@
 import React from "react";
 import toast from "react-hot-toast";
 import serviceImg from "../../Assets/Take Away-bro.svg";
+import useTitle from "../../Hooks/useTitle";
 
 const AddServices = () => {
+  useTitle("Add Service");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;

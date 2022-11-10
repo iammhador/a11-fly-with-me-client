@@ -1,15 +1,24 @@
-Site Name : Fly With Me
-Develop By : Mehedy Hasan Ador
-Site Description : 'Fly With Me' is a tourist guide service site. Who are new and don't know where and how to go places, We help them to find best and perfect place for him/ her.
-I Have five years of experience on this sector. If you want to know more, Fill free to contact me.
+Live Site Link : https://fly-with-me-484dc.web.app
 
-Framework : Tailwind
-Component Library : Daisy UI, Hyper UI, Float UI, Mamba, Tailwinduikit, Tailwind-kit And Many More.
-Images : https://www.pexels.com/
-Illustrator image : https://undraw.co/ and https://storyset.com/
-Image Size Compromise : Tiny Png
-Icons : React Icon
-Special NPM Package : React-Phot_view
+Vercel Site Link : https://fly-with-me.vercel.app/
+
+Github Client Site Link : https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-iammhador
+
+Github Server Site Link : https://github.com/programming-hero-web-course2/b6-quiz-crackerz-iammhador
+
+Site Name : Fly With Me <br>
+Develop By : Mehedy Hasan Ador <br>
+Site Description : 'Fly With Me' is a tourist guide service site. Who are new and don't know where and how to go places, We help them to find best and perfect place for him/ her.
+I Have five years of experience on this sector. If you want to know more, Fill free to contact me. <br>
+
+Framework : Tailwind <br>
+Component Library : Daisy UI, Hyper UI, Float UI, Mamba, Tailwinduikit, Tailwind-kit And Many More. <br>
+Images : https://www.pexels.com/ <br>
+Illustrator image : https://undraw.co/ and https://storyset.com/ <br>
+Image Size Compromise : Tiny Png <br>
+Image Upload : IMGBB <br>
+Icons : React Icon <br>
+Special NPM Package : React-Phot_view <br>
 
 Site Information :
 

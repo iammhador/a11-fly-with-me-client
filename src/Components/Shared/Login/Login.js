@@ -1,16 +1,21 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import eye from "../../Assets/icons8-eye-48.png";
 import atSign from "../../Assets/icons8-email-sign-64.png";
 import loginImg from "../../Assets/undraw_authentication_re_svpt.svg";
 import { AuthContext } from "../../Context/Context";
 import toast from "react-hot-toast";
+import useTitle from "../../Hooks/useTitle";
 const Login = () => {
   const { googleLogin, login } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  let from = location.state?.from?.pathname || "/";
+  useTitle("Login");
 
   //# Google Login :
   const handleGoogleLogin = () => {
-    googleLogin();
+    googleLogin().then(() => navigate(from, { replace: true }));
   };
 
   //# Login :
@@ -23,6 +28,7 @@ const Login = () => {
       .then(() => {
         toast.success("Successfully Logged");
         form.reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         toast.error(error);
@@ -45,7 +51,7 @@ const Login = () => {
             className="mx-auto mt-8 mb-0 max-w-md space-y-4"
           >
             <div>
-              <label for="email" className="sr-only">
+              <label htmlFor="email" className="sr-only">
                 Email
               </label>
 
@@ -69,7 +75,7 @@ const Login = () => {
             </div>
 
             <div>
-              <label for="password" className="sr-only">
+              <label htmlFor="password" className="sr-only">
                 Password
               </label>
               <div className="relative">

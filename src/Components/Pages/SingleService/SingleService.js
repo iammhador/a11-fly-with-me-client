@@ -1,7 +1,8 @@
 import React from "react";
 import { FaStar, FaDollarSign, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { PhotoView } from "react-photo-view";
+import { PhotoView, PhotoProvider } from "react-photo-view";
+
 import "react-photo-view/dist/react-photo-view.css";
 
 const SingleService = ({ singleSer }) => {
@@ -13,13 +14,15 @@ const SingleService = ({ singleSer }) => {
         href="#"
         className="block rounded-lg p-4 shadow-sm shadow-indigo-100"
       >
-        <PhotoView src={image}>
-          <img
-            alt="Home"
-            src={image}
-            className="h-56 w-full rounded-md object-cover"
-          />
-        </PhotoView>
+        <PhotoProvider>
+          <PhotoView src={image}>
+            <img
+              alt="Home"
+              src={image}
+              className="h-56 w-full rounded-md object-cover"
+            />
+          </PhotoView>
+        </PhotoProvider>
         <div className="mt-2">
           <dl>
             <div>

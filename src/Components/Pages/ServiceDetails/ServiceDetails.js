@@ -1,11 +1,15 @@
-import React from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 import { FaStar, FaDollarSign } from "react-icons/fa";
-import { PhotoView } from "react-photo-view";
+import { PhotoView, PhotoProvider } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import AddReview from "../AddReview/AddReview";
 import ShowReview from "../ShowReview/ShowReview";
+import { AuthContext } from "../../Context/Context";
+
 const ServiceDetails = () => {
+  const { user } = useContext(AuthContext);
+  const [refresh, setRefresh] = useState(false);
   const singleService = useLoaderData();
   const { name, description, price, rating, image } = singleService;
 
@@ -18,14 +22,15 @@ const ServiceDetails = () => {
         href="#"
         className="block rounded-lg p-4 shadow-sm shadow-indigo-100"
       >
-        <PhotoView src={image}>
-          <img
-            alt="Home"
-            src={image}
-            className="h-96 w-full rounded-md object-cover"
-          />
-        </PhotoView>
-
+        <PhotoProvider>
+          <PhotoView src={image}>
+            <img
+              alt="Home"
+              src={image}
+              className="h-96 w-full rounded-md object-cover"
+            />
+          </PhotoView>
+        </PhotoProvider>
         <div className="mt-2">
           <dl>
             <div>
@@ -65,17 +70,33 @@ const ServiceDetails = () => {
           All Reviews
         </h1>
         <div>
-          <ShowReview singleService={singleService} />
+          <ShowReview singleService={singleService} refresh={refresh} />
         </div>
       </div>
 
       <div className="my-10">
-        <h1 className="text-center text-5xl font-bold text-info uppercase mb-5">
-          Add Your Review
-        </h1>
-        <div>
-          <AddReview singleService={singleService} />
-        </div>
+        {user && user?.email ? (
+          <>
+            <h1 className="text-center text-5xl font-bold text-info uppercase mb-5">
+              Add Your Review
+            </h1>
+            <div>
+              <AddReview
+                singleService={singleService}
+                setRefresh={setRefresh}
+                refresh={refresh}
+              />
+            </div>
+          </>
+        ) : (
+          <h1 className="text-center text-xl font-bold text-info uppercase mb-5">
+            If Your Want To Add Your Review, Please{" "}
+            <Link to="/login" className="text-secondary underline">
+              Login
+            </Link>{" "}
+            First.
+          </h1>
+        )}
       </div>
     </div>
   );

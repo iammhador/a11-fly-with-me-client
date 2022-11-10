@@ -15,35 +15,35 @@ const googleProvider = new GoogleAuthProvider();
 const auth = getAuth(app);
 const Context = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loader, setLoader] = useState(false);
+  const [loader, setLoader] = useState(true);
   //# Google Login & Register :
   const googleLogin = () => {
-    setLoader(false);
+    setLoader(true);
     return signInWithPopup(auth, googleProvider);
   };
 
   //# Register :
   const register = (email, password) => {
-    setLoader(false);
+    setLoader(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   //# Login :
   const login = (email, password) => {
-    setLoader(false);
+    setLoader(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   //# Logout :
   const logout = () => {
-    setLoader(false);
+    setLoader(true);
     signOut(auth);
   };
 
   //# Store User Info :
   useEffect(() => {
     const unSub = onAuthStateChanged(auth, (currentUser) => {
-      setLoader(true);
+      setLoader(false);
       setUser(currentUser);
     });
     return () => unSub();

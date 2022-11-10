@@ -1,6 +1,6 @@
 import React from "react";
 import { FaPen, FaTrash } from "react-icons/fa";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const UserReview = ({ review, handleDelete }) => {
   const { _id, email, title } = review;
@@ -36,11 +36,11 @@ const UserReview = ({ review, handleDelete }) => {
                 <p>{email}</p>
               </td>
               <th>
-                {/* <Link to={`/review/${_id}`}> */}
-                <button className="py-3 px-4 bg-primary text-neutral text-xl text-center rounded hover:bg-secondary ml-1">
-                  <FaPen />
-                </button>
-                {/* </Link> */}
+                <Link to={`/review/${_id}`}>
+                  <button className="py-3 px-4 bg-primary text-neutral text-xl text-center rounded hover:bg-secondary ml-1">
+                    <FaPen />
+                  </button>
+                </Link>
 
                 <button
                   onClick={() => handleDelete(_id)}

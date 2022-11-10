@@ -2,10 +2,9 @@ import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../Context/Context";
 
-const AddReview = ({ singleService }) => {
+const AddReview = ({ singleService, setRefresh, refresh }) => {
   const { user } = useContext(AuthContext);
   const { _id, name } = singleService;
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -32,6 +31,7 @@ const AddReview = ({ singleService }) => {
       .then(() => {
         toast.success("You Review Has Been Added");
         form.reset();
+        setRefresh(!refresh);
       });
   };
 

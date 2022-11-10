@@ -5,15 +5,13 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Context from "./Components/Context/Context";
 import { Toaster } from "react-hot-toast";
-import { PhotoProvider } from "react-photo-view";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Context>
-      <PhotoProvider>
-        <App />
-        <Toaster position="top-right" reverseOrder={false} />
-      </PhotoProvider>
+      <App />
+      <Toaster position="top-right" reverseOrder={false} />
     </Context>
   </React.StrictMode>
 );

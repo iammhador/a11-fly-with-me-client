@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Review from "../Review/Review";
 
-const ShowReview = ({ singleService }) => {
+const ShowReview = ({ singleService, refresh }) => {
   const [showReview, setShowReview] = useState([]);
   const { _id } = singleService;
 
@@ -15,13 +15,21 @@ const ShowReview = ({ singleService }) => {
       .then((data) => {
         setShowReview(data);
       });
-  }, [_id]);
+  }, [_id, refresh]);
 
   return (
     <div>
-      {showReview.map((review) => (
-        <Review key={review._id} review={review} />
-      ))}
+      {showReview.length > 0 ? (
+        <>
+          {showReview.map((review) => (
+            <Review key={review._id} review={review} />
+          ))}
+        </>
+      ) : (
+        <h1 className="text-center text-xl font-bold text-secondary uppercase mb-5">
+          No Review Found
+        </h1>
+      )}
     </div>
   );
 };
