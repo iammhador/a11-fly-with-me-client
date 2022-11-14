@@ -8,7 +8,7 @@ const ThreeService = () => {
 
   //# Limited Service Showed By Using useEffect :
   useEffect(() => {
-    fetch("http://localhost:5000/service")
+    fetch("https://fly-with-me.vercel.app/service")
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);

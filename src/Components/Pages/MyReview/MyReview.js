@@ -10,7 +10,7 @@ const MyReview = () => {
   useTitle("My Review");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+    fetch(`https://fly-with-me.vercel.app/reviews?email=${user?.email}`, {
       headers: {
         "Content-Type": "Application/json",
       },
@@ -26,7 +26,7 @@ const MyReview = () => {
       "Are you sure you want to delete the review?"
     );
     if (confirmation) {
-      fetch(`http://localhost:5000/reviews/${id}`, {
+      fetch(`https://fly-with-me.vercel.app/reviews/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

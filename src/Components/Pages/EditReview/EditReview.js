@@ -14,7 +14,7 @@ const EditReview = () => {
     const review = {
       massage: massage,
     };
-    fetch(`http://localhost:5000/allreviews/${_id}`, {
+    fetch(`https://fly-with-me.vercel.app/allreviews/${_id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

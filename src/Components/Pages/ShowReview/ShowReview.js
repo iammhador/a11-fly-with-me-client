@@ -6,7 +6,7 @@ const ShowReview = ({ singleService, refresh }) => {
   const { _id } = singleService;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews/${_id}`, {
+    fetch(`https://fly-with-me.vercel.app/reviews/${_id}`, {
       headers: {
         "Content-Type": "application/json",
       },

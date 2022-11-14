@@ -1,5 +1,5 @@
 Live Site Link : https://fly-with-me-484dc.web.app <br>
-Vercel Site Link : http://localhost:5000/ <br>
+Vercel Site Link : https://fly-with-me.vercel.app/ <br>
 Github Client Site Link : https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-iammhador <br>
 Github Server Site Link : https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-iammhador <br>
 
