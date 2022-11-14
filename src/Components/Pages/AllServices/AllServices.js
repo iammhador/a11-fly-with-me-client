@@ -10,7 +10,7 @@ const AllServices = ({ service }) => {
 
   //# Fetch Data :
   useEffect(() => {
-    fetch(`https://fly-with-me.vercel.app/services/${_id}`, {
+    fetch(`http://localhost:5000/services/${_id}`, {
       headers: {
         "Content-Type": "Application/json",
       },

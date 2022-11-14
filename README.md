@@ -1,10 +1,7 @@
-Live Site Link : https://fly-with-me-484dc.web.app
-
-Vercel Site Link : https://fly-with-me.vercel.app/
-
-Github Client Site Link : https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-iammhador
-
-Github Server Site Link : https://github.com/programming-hero-web-course2/b6-quiz-crackerz-iammhador
+Live Site Link : https://fly-with-me-484dc.web.app <br>
+Vercel Site Link : http://localhost:5000/ <br>
+Github Client Site Link : https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-iammhador <br>
+Github Server Site Link : https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-iammhador <br>
 
 Site Name : Fly With Me <br>
 Develop By : Mehedy Hasan Ador <br>

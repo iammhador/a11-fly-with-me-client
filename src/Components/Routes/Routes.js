@@ -22,13 +22,13 @@ export const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services />,
-        loader: () => fetch("https://fly-with-me.vercel.app/services"),
+        loader: () => fetch("http://localhost:5000/services"),
       },
       {
         path: "/services/:id",
         element: <ServiceDetails />,
         loader: ({ params }) =>
-          fetch(`https://fly-with-me.vercel.app/services/${params.id}`),
+          fetch(`http://localhost:5000/services/${params.id}`),
       },
       { path: "/blog", element: <Blog /> },
       {
@@ -51,7 +51,7 @@ export const router = createBrowserRouter([
         path: "/review/:id",
         element: <EditReview />,
         loader: ({ params }) =>
-          fetch(`https://fly-with-me.vercel.app/allreviews/${params.id}`),
+          fetch(`http://localhost:5000/allreviews/${params.id}`),
       },
       {
         path: "/login",

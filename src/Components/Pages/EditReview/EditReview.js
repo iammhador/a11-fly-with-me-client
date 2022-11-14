@@ -11,22 +11,22 @@ const EditReview = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const massage = e.target.massage.value;
-    // const review = {
-    //   massage: massage,
-    // };
-    // fetch(`https://fly-with-me.vercel.app/allreviews/${_id}`, {
-    //   method: "PATCH",
-    //   headers: {
-    //     "Content-Type": "Application/json",
-    //   },
-    //   body: JSON.stringify(review),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     if (data.modifiedCount > 0) {
-    //       toast.success("Update Successful");
-    //     }
-    //   });
+    const review = {
+      massage: massage,
+    };
+    fetch(`http://localhost:5000/allreviews/${_id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(review),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          toast.success("Update Successful");
+        }
+      });
   };
   return (
     <div className="my-20">
