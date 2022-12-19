@@ -1,11 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import AOS from "aos";
 import { FaArrowRight } from "react-icons/fa";
 import bannnerImg from "../../Assets/undraw_adventure_re_ncqp.svg";
 const Banner = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
   return (
-    <div>
-      <section className="mb-10">
+    <>
+      <section data-aos="fade-down" className="mb-10">
         <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
           <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
             <h1 className="text-5xl font-bold leading-none sm:text-6xl">
@@ -35,7 +40,7 @@ const Banner = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

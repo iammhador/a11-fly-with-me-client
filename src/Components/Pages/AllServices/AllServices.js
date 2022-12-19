@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import AOS from "aos";
 import { FaStar, FaDollarSign, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { PhotoView, PhotoProvider } from "react-photo-view";
@@ -7,6 +8,12 @@ import "react-photo-view/dist/react-photo-view.css";
 const AllServices = ({ service }) => {
   const { _id, name, description, price, rating, image } = service;
   const [serviceData, setServiceData] = useState();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
 
   //# Fetch Data :
   useEffect(() => {
@@ -24,6 +31,7 @@ const AllServices = ({ service }) => {
       <div
         href="#"
         className="block rounded-lg p-4 shadow-sm shadow-indigo-100"
+        data-aos="fade-down"
       >
         <PhotoProvider>
           <PhotoView src={image}>

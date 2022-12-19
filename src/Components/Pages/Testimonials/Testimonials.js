@@ -1,8 +1,13 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import AOS from "aos";
 const Testimonials = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
   return (
-    <div className="mb-10">
+    <div data-aos="fade-down" className="mb-10">
       <h2 className="text-2xl leading-6 text-primary text-center px-4">
         Testimonials
       </h2>

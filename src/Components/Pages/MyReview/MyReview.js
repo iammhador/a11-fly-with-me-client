@@ -3,11 +3,19 @@ import toast from "react-hot-toast";
 import { AuthContext } from "../../Context/Context";
 import useTitle from "../../Hooks/useTitle";
 import UserReview from "../UserReview/UserReview";
+import AOS from "aos";
+
 const MyReview = () => {
   const [userReview, setUserReview] = useState([]);
   const [refresh, setRefresh] = useState(false);
   const { user } = useContext(AuthContext);
   useTitle("My Review");
+
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
 
   useEffect(() => {
     fetch(`https://fly-with-me.vercel.app/reviews?email=${user?.email}`, {
@@ -42,7 +50,7 @@ const MyReview = () => {
   };
 
   return (
-    <div className="my-20">
+    <div data-aos="fade-down" className="my-20">
       {userReview.length > 0 ? (
         <>
           {" "}

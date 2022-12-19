@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
 import useTitle from "../../Hooks/useTitle";
 
 const Blog = () => {
   useTitle("Blog");
 
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
   return (
-    <div className="py-10">
+    <div data-aos="fade-down" className="py-10">
       <section className="">
         <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
           <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl text-secondary">
             Blog Section
           </h2>
           <div className="grid gap-10 md:gap-8 sm:p-3 md:grid-cols-2 lg:px-12 xl:px-32">
-            <div className="text-left">
+            <div data-aos="fade-down" className="text-left">
               <h3 className="font-semibold text-primary">
                 Difference between SQL and NoSQL
               </h3>
@@ -25,7 +31,7 @@ const Blog = () => {
               </p>
             </div>
 
-            <div className="text-left">
+            <div data-aos="fade-down" className="text-left">
               <h3 className="font-semibold text-primary">
                 What is JWT, and how does it work?
               </h3>
@@ -38,7 +44,7 @@ const Blog = () => {
               </p>
             </div>
 
-            <div className="text-left">
+            <div data-aos="fade-down" className="text-left">
               <h3 className="font-semibold text-primary">
                 What is the difference between javascript and NodeJS?
               </h3>
@@ -50,7 +56,7 @@ const Blog = () => {
               </p>
             </div>
 
-            <div className="text-left">
+            <div data-aos="fade-down" className="text-left">
               <h3 className="font-semibold text-primary">
                 How does NodeJS handle multiple requests at the same time?
               </h3>

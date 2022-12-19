@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
+import AOS from "aos";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import SingleService from "../SingleService/SingleService";
 
 const ThreeService = () => {
   const [service, setService] = useState([]);
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
 
   //# Limited Service Showed By Using useEffect :
   useEffect(() => {
@@ -13,7 +19,7 @@ const ThreeService = () => {
       .then((data) => setService(data));
   }, []);
   return (
-    <div className="mb-10">
+    <div data-aos="fade-down" className="mb-10">
       <h1 className="text-center text-5xl font-bold text-info uppercase mb-10">
         Our Service
       </h1>

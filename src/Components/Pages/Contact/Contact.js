@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
 import toast from "react-hot-toast";
 import contact from "../../Assets/Contact us-pana.svg";
 const Contact = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -16,7 +22,7 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact">
+    <div data-aos="fade-down" id="contact">
       <section className=" mb-10">
         <div className="container px-6 py-12 mx-auto">
           <h1 className="text-center text-5xl font-bold text-info uppercase mt-10">

@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import toast from "react-hot-toast";
 import serviceImg from "../../Assets/Take Away-bro.svg";
 import useTitle from "../../Hooks/useTitle";
+import AOS from "aos";
 
 const AddServices = () => {
   useTitle("Add Service");
+
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,7 +44,7 @@ const AddServices = () => {
   };
 
   return (
-    <div className=" mb-10">
+    <div data-aos="fade-down" className=" mb-10">
       <section className=" mb-10">
         <div className="container px-6 py-12 mx-auto">
           <h1 className="text-center text-5xl font-bold text-info uppercase mt-10">
