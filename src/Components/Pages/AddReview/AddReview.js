@@ -1,10 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../Context/Context";
+import AOS from "aos";
 
 const AddReview = ({ singleService, setRefresh, refresh }) => {
   const { user } = useContext(AuthContext);
   const { _id, name } = singleService;
+
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -36,7 +44,7 @@ const AddReview = ({ singleService, setRefresh, refresh }) => {
   };
 
   return (
-    <div>
+    <div data-aos="fade-down">
       <div className="mt-8 lg:mx-6 text-left">
         <div className="w-full px-8 py-10 mx-auto overflow-hidden b rounded-lg shadow-2xl  shadow-gray-300/50 dark:shadow-black/50">
           <form onSubmit={handleSubmit} className="mt-6">

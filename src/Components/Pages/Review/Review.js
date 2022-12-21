@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
 import userPhoto from "../../Assets/icons8-person-100.png";
 
 const Review = ({ review }) => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
   return (
-    <div>
-      <div>
+    <>
+      <div data-aos="fade-down">
         {review ? (
           <div
             className="relative block rounded-xl border border-gray-100 p-8 shadow-xl mb-5 "
@@ -42,7 +48,7 @@ const Review = ({ review }) => {
           </>
         )}
       </div>
-    </div>
+    </>
   );
 };
 

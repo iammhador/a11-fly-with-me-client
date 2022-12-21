@@ -48,9 +48,9 @@ const Testimonials = () => {
                   </clipPath>
                 </defs>
               </svg>
-              <p className="xl:w-80 text-base leading-normal text-center mt-4">
+              <p className="xl:w-80 text-base leading-normal text-center mt-4 px-5">
                 This person is very cool, friendly and energetic. I didn't feel
-                bored. He give me good company. Provide Best service. Behaviour
+                bored. He give me good company. Provide Best service. Behavior
                 is very good. I will definitely take his service again.
               </p>
             </div>
@@ -176,7 +176,7 @@ const Testimonials = () => {
                   </clipPath>
                 </defs>
               </svg>
-              <p className="xl:w-80 text-base leading-normal text-center mt-4">
+              <p className="xl:w-80 text-base leading-normal text-center mt-4 px-5">
                 If you want to travel solo, This man is perfect. He knows very
                 beautiful places. I travel Norway and He take me beautiful
                 places I ever saw. Man, This person is perfect as your travel
@@ -305,7 +305,7 @@ const Testimonials = () => {
                   </clipPath>
                 </defs>
               </svg>
-              <p className="xl:w-80 text-base leading-normal text-center mt-4">
+              <p className="xl:w-80 text-base leading-normal text-center mt-4 px-5">
                 I don't know where is the best for me to travel. I ask this
                 person and he gives me good suggestion. He take me very good
                 places. He is also budget friendly. You guys definitely try him.

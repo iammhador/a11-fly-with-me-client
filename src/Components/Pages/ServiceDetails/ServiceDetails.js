@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { FaStar, FaDollarSign } from "react-icons/fa";
 import { PhotoView, PhotoProvider } from "react-photo-view";
@@ -6,6 +6,7 @@ import "react-photo-view/dist/react-photo-view.css";
 import AddReview from "../AddReview/AddReview";
 import ShowReview from "../ShowReview/ShowReview";
 import { AuthContext } from "../../Context/Context";
+import AOS from "aos";
 
 const ServiceDetails = () => {
   const { user } = useContext(AuthContext);
@@ -13,8 +14,17 @@ const ServiceDetails = () => {
   const singleService = useLoaderData();
   const { name, description, price, rating, image } = singleService;
 
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
+
   return (
-    <div className="md:w-2/3 sm:w-full  mx-auto px-20 my-20">
+    <div
+      data-aos="fade-down"
+      className="md:w-2/3 sm:w-full  mx-auto px-20 my-20"
+    >
       <h1 className="text-center md:text-5xl sm:text-xl font-bold text-info uppercase mb-5">
         Information About {name}
       </h1>
