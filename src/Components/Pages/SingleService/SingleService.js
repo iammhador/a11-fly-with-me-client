@@ -35,8 +35,8 @@ const SingleService = ({ singleSer }) => {
             </div>
           </dl>
 
-          <div className="mt-6 flex items-center gap-8 text-xs">
-            <div className="sm:inline-flex sm:shrink-0 sm:items-center">
+          <div className="mt-6 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-2 items-start gap-8 text-xs">
+            <div className="inline-flex shrink-0 items-center">
               <FaDollarSign className="text-2xl text-secondary" />
 
               <div className="mt-1.5 sm:ml-3 sm:mt-0">
@@ -46,8 +46,8 @@ const SingleService = ({ singleSer }) => {
               </div>
             </div>
 
-            <div className="sm:inline-flex sm:shrink-0 sm:items-center">
-              <FaStar className="text-2xl text-secondary" />
+            <div className="inline-flex shrink-0 items-center">
+              <FaStar className="text-2xl text-secondary mr-1 md:mr-0" />
 
               <div className="mt-1.5 sm:ml-3 sm:mt-0">
                 <p className="text-primary">My Choice</p>
@@ -56,7 +56,7 @@ const SingleService = ({ singleSer }) => {
               </div>
             </div>
 
-            <div className="sm:inline-flex sm:shrink-0 sm:items-center md:block">
+            <div className="sm:inline-flex sm:shrink-0 sm:items-center ">
               <Link to={`/services/${_id}`}>
                 <button className="flex items-center py-3 px-5 bg-secondary rounded text-neutral hover:bg-info">
                   Details
