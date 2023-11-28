@@ -17,7 +17,7 @@ Welcome to Fly With Me! This is a tourist guide service site designed to assist 
 - **Image Size Compression:** [TinyPNG](https://tinypng.com/)
 - **Image Upload:** [IMGBB](https://imgbb.com/)
 - **Icons:** React Icons
-- **Special NPM Package:** React-Phot_view
+- **Special NPM Package:** React-Photo_view
 
 ## Site Features
 
