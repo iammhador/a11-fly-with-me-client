@@ -25,8 +25,8 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    const username = form.username.value;
-    const phone = form.phone.value;
+    // const username = form.username.value;
+    // const phone = form.phone.value;
     const email = form.email.value;
     const password = form.password.value;
 
@@ -48,8 +48,7 @@ const Register = () => {
             <h1 className="text-2xl font-bold sm:text-3xl text-primary">
               Don't Have An Account?
             </h1>
-
-            <p className="mt-4  text-primary">Please Register</p>
+            <p className="mt-4 text-primary">Please Register</p>
           </div>
 
           <form
@@ -65,7 +64,7 @@ const Register = () => {
                 <input
                   type="text"
                   name="username"
-                  className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                  className="w-full text-primary rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                   placeholder="Enter Username"
                 />
 
@@ -88,7 +87,7 @@ const Register = () => {
                 <input
                   type="text"
                   name="phone"
-                  className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                  className="w-full text-primary rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                   placeholder="Enter Contact Number"
                 />
 

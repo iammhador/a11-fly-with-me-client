@@ -1,7 +1,12 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import useTitle from "../../Hooks/useTitle";
-
+import countrySides from "../../Assets/Countrysides.jpg";
+import jungle from "../../Assets/Jungle.jpg";
+import nature from "../../Assets/Nature.jpg";
+import mountains from "../../Assets/Mountains.jpg";
+import seashore from "../../Assets/Seashore.jpg";
+import sunsets from "../../Assets/Sunsets.jpg";
 const Blog = () => {
   useTitle("Blog");
 
@@ -10,6 +15,7 @@ const Blog = () => {
       duration: 2000,
     });
   }, []);
+
   return (
     <div data-aos="fade-down" className="py-10">
       <section className="">
@@ -17,54 +23,102 @@ const Blog = () => {
           <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl text-secondary">
             Blog Section
           </h2>
-          <div className="grid gap-10 md:gap-8 sm:p-3 md:grid-cols-2 lg:px-12 xl:px-32">
+          <div className="grid gap-10 md:gap-8 sm:p-3 md:grid-cols-3 lg:px-12 xl:px-32">
             <div data-aos="fade-down" className="text-left">
+              <img
+                src={nature}
+                alt="Nature Image"
+                className="mb-4 w-full h-auto"
+              />
               <h3 className="font-semibold text-primary">
-                Difference between SQL and NoSQL
+                Exploring the Wonders of Nature
               </h3>
               <p className="mt-1 text-gray-400">
-                SQL is the programming language used to interface with
-                relational databases. (Relational databases model data as
-                records in rows and tables with logical links between them).
-                NoSQL is a class of DBMs that are non-relational and generally
-                do not use SQL.
+                Dive into the breathtaking beauty of nature, where every leaf,
+                every flower, and every sunset tells a unique story. Nature is
+                the ultimate artist, creating masterpieces that leave us
+                awe-struck.
               </p>
             </div>
 
             <div data-aos="fade-down" className="text-left">
+              <img
+                src={countrySides}
+                alt="Country Image"
+                className="mb-4 w-full h-auto"
+              />
               <h3 className="font-semibold text-primary">
-                What is JWT, and how does it work?
+                Journey Through Charming Countrysides
               </h3>
               <p className="mt-1 text-gray-400">
-                What is JWT (JSON Web Token)? JSON Web Token (JWT) is an open
-                standard (RFC 7519) for securely transmitting information
-                between parties as JSON object. It is compact, readable and
-                digitally signed using a private key/ or a public key pair by
-                the Identity Provider(IdP).
+                Experience the charm of tranquil countrysides, where rolling
+                hills, quaint villages, and warm hospitality come together to
+                create a perfect escape. Discover the hidden gems of country
+                life.
               </p>
             </div>
 
             <div data-aos="fade-down" className="text-left">
+              <img
+                src={mountains}
+                alt="Mountain Image"
+                className="mb-4 w-full h-auto"
+              />
               <h3 className="font-semibold text-primary">
-                What is the difference between javascript and NodeJS?
+                Majestic Mountains and Adventure
               </h3>
               <p className="mt-1 text-gray-400">
-                JavaScript is a simple programming language that can be used
-                with any browser that has the JavaScript Engine installed. Node.
-                js, on the other hand, is an interpreter or execution
-                environment for the JavaScript programming language.
+                Embark on a journey to the towering peaks of majestic mountains.
+                Whether you seek adventure or serenity, the mountains offer a
+                playground for exploration and self-discovery.
               </p>
             </div>
 
             <div data-aos="fade-down" className="text-left">
+              <img
+                src={seashore}
+                alt="Beach Image"
+                className="mb-4 w-full h-auto"
+              />
               <h3 className="font-semibold text-primary">
-                How does NodeJS handle multiple requests at the same time?
+                Serenity by the Seashore
               </h3>
               <p className="mt-1 text-gray-400">
-                NodeJS receives multiple client requests and places them into
-                EventQueue. NodeJS is built with the concept of event-driven
-                architecture. NodeJS has its own EventLoop which is an infinite
-                loop that receives requests and processes them.
+                Relax and unwind as you listen to the soothing waves on the
+                beach. Discover the serenity of the seashore and let the
+                expansive ocean views calm your soul.
+              </p>
+            </div>
+
+            <div data-aos="fade-down" className="text-left">
+              <img
+                src={jungle}
+                alt="Urban Image"
+                className="mb-4 w-full h-auto"
+              />
+              <h3 className="font-semibold text-primary">
+                Exploring the Urban Jungle
+              </h3>
+              <p className="mt-1 text-gray-400">
+                Immerse yourself in the hustle and bustle of the urban jungle.
+                From towering skyscrapers to vibrant street life, experience the
+                energy and diversity of city living.
+              </p>
+            </div>
+
+            <div data-aos="fade-down" className="text-left">
+              <img
+                src={sunsets}
+                alt="Sunset Image"
+                className="mb-4 w-full h-auto"
+              />
+              <h3 className="font-semibold text-primary">
+                Chasing Sunsets Around the World
+              </h3>
+              <p className="mt-1 text-gray-400">
+                Join the quest for the most stunning sunsets across the globe.
+                Each sunset is a unique masterpiece, painting the sky with
+                vibrant colors and casting a magical glow over the landscapes.
               </p>
             </div>
           </div>

@@ -20,7 +20,7 @@ const Footer = () => {
               <div className="mt-8 flex gap-6 text-gray-500">
                 <a
                   className="hover:opacity-75"
-                  href="www.facebook.com"
+                  href="http://www.facebook.com"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -42,7 +42,7 @@ const Footer = () => {
 
                 <a
                   className="hover:opacity-75"
-                  href="www.instagram.com"
+                  href="http://www.instagram.com"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -64,7 +64,7 @@ const Footer = () => {
 
                 <a
                   className="hover:opacity-75"
-                  href="www.twitter.com"
+                  href="http://www.twitter.com"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -82,7 +82,7 @@ const Footer = () => {
 
                 <a
                   className="hover:opacity-75"
-                  href="www.github.com"
+                  href="http://www.github.com"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -104,7 +104,7 @@ const Footer = () => {
 
                 <a
                   className="hover:opacity-75"
-                  href="www.dribble.com"
+                  href="https://dribbble.com/"
                   target="_blank"
                   rel="noreferrer"
                 >
