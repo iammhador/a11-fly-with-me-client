@@ -14,14 +14,14 @@ const Banner = () => {
         <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
           <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
             <h1 className="text-5xl font-bold leading-none sm:text-6xl">
-              Feel The Chill, <span className="text-info">Travel </span>The
+              Feel The Chill, <span className="text-info">Travel</span> The
               World
             </h1>
             <p className="mt-6 mb-8 text-lg sm:mb-12">
               I'm a professional tourist guide. Provide tourist services all
-              over the Europe and Asia. If you don't know where to start your
+              over Europe and Asia. If you don't know where to start your
               vacation or which country is best for you to travel, feel free to
-              contact with me.
+              contact me.
             </p>
             <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
               <a href="#contact">

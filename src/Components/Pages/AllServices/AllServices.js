@@ -55,34 +55,34 @@ const AllServices = ({ service }) => {
             </div>
           </dl>
 
-          <div className="mt-6 flex items-center gap-8 text-xs">
-            <div className="sm:inline-flex sm:shrink-0 sm:items-center">
-              <FaDollarSign className="text-2xl text-secondary" />
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-1 md:items-center md:gap-4">
+            <div className="flex-shrink-0">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:justify-items-center">
+                <div className="flex items-center sm:justify-center">
+                  <FaDollarSign className="text-2xl text-secondary" />
+                  <div className="ml-3">
+                    <p className="text-primary">Charge</p>
+                    <p className="font-medium text-primary">{price}</p>
+                  </div>
+                </div>
 
-              <div className="mt-1.5 sm:ml-3 sm:mt-0">
-                <p className="text-primary">Charge</p>
+                <div className="flex items-center sm:justify-center">
+                  <FaStar className="text-2xl text-secondary" />
+                  <div className="ml-3">
+                    <p className="text-primary">My Choice</p>
+                    <p className="font-medium text-primary">{rating}</p>
+                  </div>
+                </div>
 
-                <p className="font-medium text-primary">{price}</p>
+                <div className="md:col-span-2 grid place-items-center sm:col-span-1">
+                  <Link to={`/services/${_id}`}>
+                    <button className="flex items-center py-3 px-5 bg-secondary rounded text-neutral hover:bg-info">
+                      Details
+                      <FaArrowRight className="ml-2" />
+                    </button>
+                  </Link>
+                </div>
               </div>
-            </div>
-
-            <div className="sm:inline-flex sm:shrink-0 sm:items-center">
-              <FaStar className="text-2xl text-secondary" />
-
-              <div className="mt-1.5 sm:ml-3 sm:mt-0">
-                <p className="text-primary">My Choice</p>
-
-                <p className="font-medium text-primary">{rating}</p>
-              </div>
-            </div>
-
-            <div className="sm:inline-flex sm:shrink-0 sm:items-center">
-              <Link to={`/services/${_id}`}>
-                <button className="flex items-center py-3 px-5 bg-secondary rounded text-neutral hover:bg-info">
-                  Details
-                  <FaArrowRight className="ml-2" />
-                </button>
-              </Link>
             </div>
           </div>
         </div>
